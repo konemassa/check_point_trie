@@ -1,0 +1,30 @@
+
+ALGORITHME Carte;
+
+Var
+    insert: array_of integer;
+    i, tamp, max, pos: integer;
+Begin
+
+    // Remplissage du tableau//
+    write('entrer la taille du tableau')
+    read(max)
+    for (i from 0 to max): 
+      read(insert[i]);  
+    end for
+    
+    // Traitement des donnees //
+
+    for (i from 0 to insert.lenght) set 1 do 
+        tamp:=insert[i];
+        pos:=i-1;
+        while (tamp<insert[pos] and pos>=0) do
+            insert[pos+1]:=insert[pos];
+            insert[pos]:=tamp;
+            pos:=pos-1;
+        end while
+    end for
+    // Affichage//
+    for (i from 0 to max): 
+        write(insert[i]);
+    end for
